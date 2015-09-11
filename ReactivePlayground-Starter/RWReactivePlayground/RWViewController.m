@@ -32,6 +32,10 @@
     // initially hide the failure message
     self.signInFailureText.hidden = YES;
     
+    self.usernameTextField.layer.cornerRadius = 2;
+    self.usernameTextField.layer.borderColor  = [UIColor greenColor].CGColor;
+    self.usernameTextField.layer.borderWidth  = 1.0;
+    
     RACSignal *validUsernameSingal = [self.usernameTextField.rac_textSignal map:^id(NSString *text) {
         return @([self isValidUsername:text]);
     }];
